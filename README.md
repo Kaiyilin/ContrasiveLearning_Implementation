@@ -3,7 +3,7 @@ Contrastive learning is a machine learning technique used to learn the general f
 
 ## To do 
 
-[ ] create a __init__.py file  for models
-[ ] rewrite the model builders, make it cleaner
+[ ] create a __init__.py file  for models </br>
+[ ] rewrite the model builders, make it cleaner </br>
 [ ] complete class classSimCLR.py, classData.py and classVis.py in functions folder
 
