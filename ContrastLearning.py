@@ -1,33 +1,34 @@
-from functions.All_functions import *
+from functions.Basic_tools import *
 from functions.cm_tensorboard import *
 from resnet3d import Resnet3DBuilder 
 from ContrasiveLearningData import *
 import logging
-
+import tensorflow as tf
 import math
 from decimal import Decimal
 import numpy as np
  
 class SimCLR(tf.keras.Model):
 
-    def __init__(self, Net1) -> None:
+    def __init__(self, backboneNet) -> None:
         """The Network architecture and weights should be the same
         """
         super(SimCLR, self).__init__()
-        self.Net1 = Net1
+        self.Net = backboneNet
 
 
 
     
-    def compile(self, optNet1, loss_fn):
+    def compile(self, optNet, loss_fn):
         super(SimCLR, self).compile()
-        self.optNet1 = optNet1
+        self.optNet = optNet
         self.loss = loss_fn
 
     def __str__():
         print("SimCLR is working")
 
     def train_step(self, data):
+        """ Same backbone, but do twice before backpropagation"""
         img1 = data[0]
         img2 = data[1]
 
