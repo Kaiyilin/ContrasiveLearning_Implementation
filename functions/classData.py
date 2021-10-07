@@ -7,16 +7,16 @@ class Data(object):
     def __init__(self) -> None:
         pass
 
-
+    @staticmethod
     # Data Preprocessing
     def normalised(image):
         image = (image - image.min())/(image.max() - image.min()) 
         return image
-
+    @staticmethod
     def standardised(image): 
         img = (image - image.mean())/image.std() 
         return img 
-    
+    @staticmethod
     def padding_func(array, pad_size):
         # define padding size
         elements = array.shape    
@@ -39,11 +39,12 @@ class Data(object):
         pad_array = np.pad(array, pad_list, 'constant')
         pad_list = list() 
         return pad_array
-
+    @staticmethod
     def split(c,array):
         array_val = array[:c,:,:,:]
         array_tr = array[c:,:,:,:]
         return array_tr, array_val
+    
     # Read files
     def get_image_data(dirr, pad_func= False,  pre_func = None):
         """

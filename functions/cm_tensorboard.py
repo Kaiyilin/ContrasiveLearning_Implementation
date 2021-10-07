@@ -1,4 +1,4 @@
-from functions.All_functions import *
+import Basic_tools as bst
 import io
 import itertools
 from six.moves import range

@@ -8,6 +8,7 @@ class SimCLR(tf.keras.Model):
         """ The initial SimCLR should have a backbone model"""
         super(SimCLR, self).__init__()
         self.Net = backboneNet
+        self.projection_head = projection_head
 
     def compile(self, optimiser, loss_fn):
         super(SimCLR, self).compile()
@@ -18,7 +19,9 @@ class SimCLR(tf.keras.Model):
         print("SimCLR is working")
 
     def train_step(self, data):
-        """ The input of for this should have two images"""
+        """ The input of for this should have two images
+        
+        """
         img1 = data[0]
         img2 = data[1]
 
